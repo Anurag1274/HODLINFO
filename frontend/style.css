@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-container {
+  background-color: #191d28;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black; */
+  height: 70px;
+}
+
+.navbar h3 {
+  font-size: 45px;
+  color: #6ccacb;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(255, 149, 149); */
+  color: white;
+  height: 200px;
+}
+
+
+
+.title h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  margin-bottom: 5px;
+  color: #73757c;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 120px; 
+  padding: 0 20px;
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #282c34; */
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+  text-align: center;
+}
+
+.card h3{
+  color: #5cc4bf;
+  font-size: 35px;
+  margin: 2px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.card h5 {
+  color: #73757c;
+  font-size: 20px;
+  margin: 2px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.price{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px 0;
+  font-family: "Poppins", sans-serif;
+  /* background-color: red; */
+  text-align: center;
+}
+
+.price h3{
+  color: white;
+  font-size: 60px;
+}
+
+.price h5{
+  color:#73757c;
+}
+
+
+
+/* Table Section */
+
+.table-container {
+  max-height: calc(100vh - 270px); 
+  overflow-x: auto;
+  overflow-y: auto; 
+  width: 100%; 
+}
+
+.table{
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.table-heading{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: 500;
+  height: 70px;
+  color: white;
+  color: #73757c;
+  border-radius: 8px 8px 0 0; 
+}
+
+
+.table-heading td {
+  padding: 10px;
+  background-color: #191d28;
+}
+
+.table-body{
+  color: white;
+}
+
+.table-body tr {
+  background-color: #2E3241;
+  height: 60px;
+  border-collapse: collapse;
+}
+
+.table-body td{
+  border: 1px solid black;
+  height: 10px
+
+}
+
+
+/* To hide scrollbar from table */
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.table-container {
+  scrollbar-width: none; 
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"
+    />
+    <title>Cryptocurrency Prices</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="navbar">
+            <h3>HODLINFO</h3>
+        </div>
+
+        <div class="header">
+            <div class="title">
+                <h4>Best Price to Trade</h4>
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+                    <h3>0.1%</h3>
+                    <h5>5 Mins</h5>
+                </div>
+
+                <div class="card">
+                    <h3>0.96%</h3>
+                    <h5>1 Hour</h5>
+                </div>
+
+                <div class="price">
+                    <h3>26,56,110</h3>
+                    <h5>Average BTC/INR price including commission</h5>
+                </div>
+
+                <div class="card">
+                    <h3>2.73%</h3>
+                    <h5>1 Day</h5>
+                </div>
+
+                <div class="card">
+                    <h3>7.51%</h3>
+                    <h5>7 Days</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="table">
+                <thead class="table-heading">
+                    <tr>
+                        <td>#</td>
+                        <td>Name</td>
+                        <td>Last Traded Price</td>
+                        <td>Buy/Sell Price</td>
+                        <td>Volume</td>
+                        <td>Base Unit</td>
+                    </tr>
+                </thead>
+
+                <tbody class="table-body">
+                    <!-- Table Rows will be shown here using Wazirx Top 10 API -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        fetch("http://localhost:6600/api/get-data")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data received:', data);
+                let rows = '';
+
+                data.forEach((item, index) => {
+                    rows += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${item.name}</td>
+                            <td>${item.last}</td>
+                            <td>${item.buy}</td>
+                            <td>${item.sell}</td>
+                            <td>${item.volume}</td>
+                        </tr>`;
+                });
+
+                document.querySelector('.table-body').innerHTML = rows;
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+    </script>
+</body>
+</html>
