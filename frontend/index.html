@@ -72,7 +72,7 @@
     </div>
 
     <script>
-        fetch("http://localhost:6600/api/get-data")
+        fetch("https://hodlinfo-13.onrender.com/api/getData")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok: ' + response.statusText);
